@@ -56,15 +56,32 @@
 
 	'use strict';
 
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	var HelloWorld = function HelloWorld() {
-	    _classCallCheck(this, HelloWorld);
+	var HelloWorld = (function () {
+	    function HelloWorld() {
+	        _classCallCheck(this, HelloWorld);
 
-	    console.log('hello babel world');
-	};
+	        console.log('hello babel world');
+	    }
 
-	var test = new HelloWorld();
+	    _createClass(HelloWorld, [{
+	        key: 'show',
+	        value: function show() {
+	            var message = "babel!!";
+	            var elm = document.createTextNode('go go ' + message);
+	            var body = document.querySelector('body');
+	            body.appendChild(elm);
+	        }
+	    }]);
+
+	    return HelloWorld;
+	})();
+
+	var hello = new HelloWorld();
+	hello.show();
 
 /***/ }
 /******/ ]);
